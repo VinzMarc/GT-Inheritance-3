@@ -2,11 +2,10 @@
 #include <string>
 using namespace std;
 
-// Base class: Beverage
 class Beverage {
 private:
     string name;
-    int volume; // in milliliters
+    int volume;
     bool isChilled;
 
 public:
@@ -25,10 +24,9 @@ public:
     }
 };
 
-// Subclass: Water (extends Beverage)
 class Water : public Beverage {
 private:
-    string type; // "Purified", "Regular", or "Distilled"
+    string type;
 
 public:
     Water(int volume, bool isChilled, const string& type)
@@ -44,10 +42,9 @@ public:
     }
 };
 
-// Subclass: Beer (extends Beverage)
 class Beer : public Beverage {
 private:
-    double alcoholicContent; // percentage (0.01 to 1.00)
+    double alcoholicContent;
 
 public:
     Beer(int volume, bool isChilled, double alcoholicContent)
@@ -70,7 +67,6 @@ public:
 };
 
 int main() {
-    // Input for Water
     int waterVolume;
     string waterChilledInput, specifyTypeInput, waterType;
     bool waterChilled;
@@ -94,7 +90,6 @@ int main() {
     Water water(waterVolume, waterChilled, waterType);
     cout << "\nWater Details:\n" << water.toString() << endl;
 
-    // Input for Beer
     int beerVolume;
     string beerChilledInput;
     bool beerChilled;
